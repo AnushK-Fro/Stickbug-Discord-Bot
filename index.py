@@ -20,6 +20,8 @@ async def stickbug(ctx):
         sb.save_video(name + '.mp4')
         print("Saving Video!")
         await ctx.send(file=discord.File(name + ".mp4"))
+        os.remove(name + ".mp4")
+        os.remove(name + ".png")
 
 @bot.command(name='stickavatar', help='make an avatar a stickbug (mention user)')
 async def stickavatar(ctx, user: discord.User):
@@ -34,5 +36,7 @@ async def stickavatar(ctx, user: discord.User):
         sb.save_video(name + '.mp4')
         print("Saving Video!")
         await ctx.send(file=discord.File(name + ".mp4"))
+        os.remove(name + ".mp4")
+        os.remove(name + ".png")
 
 bot.run(TOKEN)
